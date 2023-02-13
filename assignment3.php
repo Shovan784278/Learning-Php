@@ -29,13 +29,13 @@
     echo evenOdd($num);
     echo "<br>";
 
-    //Another way to get value for Even Number
+    //Another way to get value for Odd Number
     $num = 1;
     echo evenOdd($num);
 
     echo "<br>";
 
-     // 1+2+3...…….100  Write a loop to calculate the summation of the series
+     // Question 2: 1+2+3...…….100  Write a loop to calculate the summation of the series
 
      $sum=0;
      for($i=0;$i<=100; $i++){
