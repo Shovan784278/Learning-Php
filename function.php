@@ -31,3 +31,28 @@
 
         echo "{$foodType} of {$NumberOfItems} have been served";
     }
+
+    //This is array for function
+
+    $student = [
+        [
+            'name' => "Shovan",
+            'age' => 32
+        ],
+        [
+            'name' => "Subroto",
+            'age' => 32
+
+        ]
+
+    ];
+
+    foreach($student as $students){
+        displayStudent($student);
+    }
+
+    function displayStudent($st){
+        echo "{$st['name']} - {$st}['age']";
+    }
+
+    
