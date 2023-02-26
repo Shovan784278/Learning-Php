@@ -55,4 +55,17 @@ $car->set_model("Civic");
 // Call the display_info() method again to display the updated car information
 $car->display_info();
 
+//Output will be
+
+// Car make: Toyota
+// Car model: Corolla
+// Car year: 2015
+// Car make: Honda
+// Car model: Civic
+// Car year: 2015
+
 ?>
+
+
+
+
