@@ -1,0 +1,1 @@
+var data = [{"fname":"Shovan","lname":"Nag","age":"32","batch":"1st","course":"Php and Laravel"},{"fname":"Rinku","lname":"Nag","age":"33","batch":"2nd","course":"React"}]

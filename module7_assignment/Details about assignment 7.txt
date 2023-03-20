@@ -1,0 +1,72 @@
+-- Create a new database named XYZ_corp
+CREATE DATABASE XYZ_corp;
+
+-- Use the newly created database
+USE XYZ_corp;
+
+-- Create a new table named employees with columns id, name, salary, and department_id.
+-- The id column is an auto-incrementing integer primary key.
+-- The salary column is a decimal number with 10 digits and 2 decimal places.
+CREATE TABLE employees (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50),
+    salary DECIMAL(10, 2),
+    department_id INT
+);
+
+-- Create a new table named departments with columns id, name, and manager.
+-- The id column is an auto-incrementing integer primary key.
+CREATE TABLE departments (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50),
+    manager VARCHAR(50)
+);
+
+-- Insert a new row into the departments table with values for name and manager.
+INSERT INTO departments (name, manager) VALUES ('Finance', 'Jane Doe');
+
+-- Insert another new row into the departments table with values for name and manager.
+INSERT INTO departments (name, manager) VALUES ('Marketing', 'John Smith');
+
+-- Insert a new row into the employees table with values for name, salary, and department_id.
+INSERT INTO employees (name, salary, department_id) VALUES ('Alice', 55000, 1);
+
+-- Insert another new row into the employees table with values for name, salary, and department_id.
+INSERT INTO employees (name, salary, department_id) VALUES ('Bob', 60000, 1);
+
+-- Insert another new row into the employees table with values for name, salary, and department_id.
+INSERT INTO employees (name, salary, department_id) VALUES ('Charlie', 45000, 2);
+
+-- Insert another new row into the employees table with values for name, salary, and department_id.
+INSERT INTO employees (name, salary, department_id) VALUES ('David', 70000, 1);
+
+-- Select all rows and columns from the employees table.
+SELECT * FROM employees;
+
+-- Select the name and salary columns from the employees table where the salary is greater than 50000.
+SELECT name, salary FROM employees WHERE salary > 50000;
+
+-- Select the average salary from the employees table.
+SELECT AVG(salary) FROM employees;
+
+-- Select the number of rows in the employees table where the department_id matches the id of the department with the name 'Marketing'.
+SELECT COUNT(*) FROM employees WHERE department_id = (SELECT id FROM departments WHERE name = 'Marketing');
+
+-- Update the salary of the employee with id 1 to 60000.
+UPDATE employees SET salary = 60000 WHERE id = 1;
+
+-- Delete all rows from the employees table where the salary is less than 30000.
+DELETE FROM employees WHERE salary < 30000;
+
+-- Select all rows and columns from the departments table.
+SELECT * FROM departments;
+
+-- Select the name and manager columns from the departments table where the name is 'Finance'.
+SELECT name, manager FROM departments WHERE name = 'Finance';
+
+-- Select the name of the department and the number of employees in that department.
+-- The results are grouped by department name.
+SELECT departments.name, COUNT(*) FROM employees JOIN departments ON employees.department_id = departments.id GROUP BY departments.name;
+
+-- Insert a new row into the departments table with values for name and manager.
+INSERT INTO departments (name, manager) VALUES ('Research', 'John Doe');
