@@ -28,7 +28,7 @@ class AppController extends Controller
         }
     }
 
-
+     // Question 4
        function JsonResponse(Request $request):jsonresponse{
         $data = array(
             "message"=> "Success",
