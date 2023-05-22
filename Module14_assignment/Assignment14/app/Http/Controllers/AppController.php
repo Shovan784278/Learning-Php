@@ -33,8 +33,8 @@ class AppController extends Controller
         $data = array(
             "message"=> "Success",
             "data"=>array(
-                "name"=> "Shovan Nag",
-                "age"=> 32
+                "name"=> "John Doe",
+                "age"=> 25
             )
         );
         return response()->json($data);
